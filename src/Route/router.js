@@ -1,34 +1,34 @@
-import { lazy } from "react"
+import { lazy } from "react";
 
-const LazyComponent = (parentDirectory,Module)=> {
-  return lazy(()=> import(`../${parentDirectory}/${Module}`));
-}
+const LazyComponent = (parentDirectory, Module) => {
+  return lazy(() => import(`../${parentDirectory}/${Module}`));
+};
 
-export const RouterMap =[
+export const RouterMap = [
   {
-    path: '/',
-    Component: LazyComponent('layout', 'Common'),
-    children:  [{
-     path:'main',
-     Component: LazyComponent('page', 'Main')
-    },
-    {
-     path: 'contact',
-     Component: LazyComponent('page', 'Contact')
-    },
-    {
-      path: 'home',
-      Component: LazyComponent('page', 'Home'),
-    },{
-      path :'login',
-      Component : LazyComponent('page', 'Login')
-    }]
-  },{
-    path: 'user',
-    
-
-  }
-]
-
-
-
+    path: "/",
+    Component: LazyComponent("layout", "Common"),
+    children: [
+      {
+        path: "main",
+        Component: LazyComponent("page", "Main"),
+      },
+      {
+        path: "contact",
+        Component: LazyComponent("page", "Contact"),
+      },
+      {
+        path: "home",
+        Component: LazyComponent("page", "Home"),
+      },
+      {
+        path: "login",
+        Component: LazyComponent("page", "Login"),
+      },
+    ],
+  },
+  {
+    path: "user",
+    Component: LazyComponent("page", "User"),
+  },
+];
