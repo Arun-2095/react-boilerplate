@@ -1,0 +1,5 @@
+@use "../abstracts/variables.scss";
+.link-color {
+    color: variables.$primary-light;
+}
+
